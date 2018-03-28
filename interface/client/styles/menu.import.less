@@ -272,6 +272,143 @@ aside.sidebar {
     }
   }
 
+  #react__node-info {
+    position: relative;
+    cursor: default;
+    display: flex;
+    flex-flow: row wrap;
+    flex-shrink: 0;
+    padding: 8px;
+    font-size: 0.9em;
+    color: #827a7a;
+    justify-content: center;
+  }
+
+  #node-info {
+    padding-bottom: 14px;
+
+    #node-info__light {
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      background-color: orange;
+    }
+
+    .submenu-container {
+      width: 185px;
+      position: fixed;
+      left: 90px;
+      bottom: 0px;
+      border-radius: 5px;
+      z-index: 1000;
+      cursor: default;
+
+      transition: 150ms linear all, 1ms linear top;
+      transition-delay: 200ms;
+      transform: translateY(-11px);
+
+      &::before {
+        @tipSize: 8px;
+        content: '';
+        margin-left: -@tipSize;
+        margin-top: 200px;
+        display: block;
+        position: absolute;
+        width: 0px;
+        height: @tipSize * 2.25;
+        border: 0px solid transparent;
+        border-width: @tipSize;
+        border-left: 0;
+        border-right-color: rgba(0, 0, 0, 0.78);
+      }
+
+      #local-stats,
+      #remote-stats {
+      }
+
+      .node-info__section {
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 8px;
+      }
+
+      .node-info__node-title {
+        font-weight: bold;
+        padding-bottom: 8px;
+      }
+
+      .node-info__local-syncmode {
+        display: inline-block;
+        margin-left: 4px;
+        font-weight: 300;
+      }
+
+      section {
+        background-color: rgba(0, 0, 0, 0.78);
+        width: 100%;
+        border-radius: 5px;
+        color: #fff;
+        position: relative;
+
+        .node-info__title {
+        }
+        span {
+          font-weight: 400;
+        }
+        a,
+        button {
+          color: #fff;
+        }
+        .badge {
+          font-size: 11px;
+        }
+        .remove-tab {
+          color: #a6a6a6;
+          position: absolute;
+          right: 5px;
+          top: 4px;
+          width: 14px;
+          &:hover {
+            color: #fff;
+          }
+        }
+
+        .accounts {
+          margin-top: 11px;
+          button {
+            font-size: 12px;
+            font-weight: 300;
+            text-transform: uppercase;
+            width: 100%;
+          }
+          .connect {
+            background-color: #4c92e6;
+            border-radius: 4px;
+            padding: 3px 0;
+          }
+          .display {
+            @identiconHeight: 17px;
+            text-align: left;
+            line-height: @identiconHeight;
+
+            .dapp-identicon-container {
+              float: right;
+              height: @identiconHeight;
+            }
+
+            .dapp-identicon {
+              margin-right: 0px;
+              width: @identiconHeight;
+              height: @identiconHeight;
+              &:not(:last-child) {
+                margin-right: 4px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
   .node-info {
     position: relative;
     cursor: default;
